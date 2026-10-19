@@ -4,20 +4,22 @@ import StudyPage from "./components/StudyPage.jsx";
 import QuizPage from "./components/QuizPage.jsx";
 import ResultPage from "./components/ResultPage.jsx";
 import { buildQuiz } from "./utils/buildQuiz.js";
+import { TESTS } from "./data/tests.js";
 
 export default function App() {
   const [phase, setPhase] = useState("start"); // start | study | quiz | result
   const [quiz, setQuiz] = useState(null);
   const [answers, setAnswers] = useState({});
 
-  const start = () => {
-    setQuiz(buildQuiz()); // new random order and random A-E spots each run
+  const start = (test) => {
+    setQuiz(buildQuiz(test)); // images + questions of the chosen test
     setAnswers({});
     setPhase("study");
   };
 
-  if (phase === "start") return <StartScreen onStart={start} />;
-  if (phase === "study") return <StudyPage onDone={() => setPhase("quiz")} />;
+  if (phase === "start") return <StartScreen tests={TESTS} onStart={start} />;
+  if (phase === "study")
+    return <StudyPage src={quiz.studyImage} onDone={() => setPhase("quiz")} />;
   if (phase === "quiz")
     return (
       <QuizPage

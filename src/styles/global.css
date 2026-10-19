@@ -131,3 +131,8 @@ img { display: block; max-width: 100%; user-select: none; }
   .rrow { grid-template-columns: 44px 90px 1fr 24px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ---------- test list on the start screen ---------- */
+.testlist { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: flex-start; }
+.testlist__item { display: grid; gap: 4px; }
+.testlist__warn { color: var(--warn); }

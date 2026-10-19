@@ -1,24 +1,38 @@
 import { STUDY_SECONDS, QUIZ_SECONDS } from "../config.js";
+import { answersReady } from "../data/tests.js";
 
-export default function StartScreen({ onStart }) {
+export default function StartScreen({ tests, onStart }) {
   return (
     <main className="card start">
       <h1>Figure memory test</h1>
-      <p className="lead">Remember where each vehicle is on the map.</p>
+      <p className="lead">Remember where each object is on the map.</p>
       <ol className="steps">
         <li>
-          <strong>Study ({STUDY_SECONDS / 60} min).</strong> A map with 12 vehicles is shown. Remember what is
-          where.
+          <strong>Study ({STUDY_SECONDS / 60} min).</strong> A map with objects
+          is shown. Remember what is where.
         </li>
         <li>
-          <strong>Answer ({QUIZ_SECONDS / 60} min).</strong> The vehicles disappear. For each of the 12
-          questions you see one vehicle and the empty map with the letters A to E. Choose the letter on the
-          spot where that vehicle was.
+          <strong>Answer ({QUIZ_SECONDS / 60} min).</strong> The objects
+          disappear. For each question you see one object and the empty map with
+          the letters A to E. Choose the letter on the spot where that object
+          was.
         </li>
       </ol>
-      <button className="btn btn--primary" onClick={onStart}>
-        Start study page
-      </button>
+
+      <div className="testlist">
+        {tests.map((t) => (
+          <div className="testlist__item" key={t.id}>
+            <button className="btn btn--primary" onClick={() => onStart(t)}>
+              Start {t.title}
+            </button>
+            {!answersReady(t) && (
+              <small className="testlist__warn">
+                Correct answers not filled in yet (src/data/tests.js)
+              </small>
+            )}
+          </div>
+        ))}
+      </div>
     </main>
   );
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import MapBoard from "./MapBoard.jsx";
 
 export default function ResultPage({ quiz, answers, onRestart }) {
-  const { spots, questions } = quiz;
+  const { spots, questions, mapImage, autoRatio } = quiz;
   const [focusId, setFocusId] = useState(null);
   const score = questions.reduce((n, q, i) => (answers[i] === q.correct ? n + 1 : n), 0);
 
@@ -20,8 +20,8 @@ export default function ResultPage({ quiz, answers, onRestart }) {
           <p className="score__num">
             {score} <span>/ {questions.length}</span>
           </p>
-          <p className="hint">Click a row to ring that vehicle's spot on the map.</p>
-          <MapBoard src="/map-blank.jpg" spots={spots} highlightId={focusId} />
+          {spots.length > 0 && <p className="hint">Click a row to ring that object's spot on the map.</p>}
+          <MapBoard src={mapImage} spots={spots} highlightId={focusId} autoRatio={autoRatio} />
         </section>
 
         <section className="result__right">

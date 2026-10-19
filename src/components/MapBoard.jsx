@@ -1,13 +1,27 @@
+import { useState } from "react";
 import { MAP_RATIO } from "../data/vehicles.js";
 
 /**
- * The road map. Pass `spots` to print a letter on each place (answer page).
+ * The map. Pass `spots` to print a letter on each place (test 1 answer page).
  * `highlightId` rings one spot (used on the result page).
+ * `autoRatio` uses the real width/height of the picture (for your own uploaded images).
  */
-export default function MapBoard({ src, spots = [], highlightId = null }) {
+export default function MapBoard({ src, spots = [], highlightId = null, autoRatio = false }) {
+  const [natural, setNatural] = useState(null);
+  const ratio = autoRatio && natural ? natural : MAP_RATIO;
+
   return (
-    <div className="map" style={{ aspectRatio: MAP_RATIO }}>
-      <img className="map__img" src={src} alt="" draggable={false} />
+    <div className="map" style={{ aspectRatio: ratio }}>
+      <img
+        className="map__img"
+        src={src}
+        alt=""
+        draggable={false}
+        onLoad={(e) => {
+          const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
+          if (w && h) setNatural(w / h);
+        }}
+      />
       {spots.map((s) => (
         <span
           key={s.id}

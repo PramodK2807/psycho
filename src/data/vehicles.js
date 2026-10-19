@@ -5,7 +5,7 @@ export const VEHICLES = [
   {
     "id": 1,
     "name": "Tractor",
-    "img": "/vehicles/v1.png",
+    "img": "/assets/test1/vehicles/v1.png",
     "box": {
       "x": 11.161217587373168,
       "y": 9.695603156708005,
@@ -16,7 +16,7 @@ export const VEHICLES = [
   {
     "id": 2,
     "name": "Motorbike",
-    "img": "/vehicles/v2.png",
+    "img": "/assets/test1/vehicles/v2.png",
     "box": {
       "x": 42.55918827508455,
       "y": 7.666290868094701,
@@ -27,7 +27,7 @@ export const VEHICLES = [
   {
     "id": 3,
     "name": "Delivery truck",
-    "img": "/vehicles/v3.png",
+    "img": "/assets/test1/vehicles/v3.png",
     "box": {
       "x": 74.85907553551297,
       "y": 6.200676437429538,
@@ -38,7 +38,7 @@ export const VEHICLES = [
   {
     "id": 4,
     "name": "Bus",
-    "img": "/vehicles/v4.png",
+    "img": "/assets/test1/vehicles/v4.png",
     "box": {
       "x": 4.8478015783540025,
       "y": 34.94926719278467,
@@ -49,7 +49,7 @@ export const VEHICLES = [
   {
     "id": 5,
     "name": "SUV",
-    "img": "/vehicles/v5.png",
+    "img": "/assets/test1/vehicles/v5.png",
     "box": {
       "x": 53.720405862457724,
       "y": 33.82187147688839,
@@ -60,7 +60,7 @@ export const VEHICLES = [
   {
     "id": 6,
     "name": "Hatchback car",
-    "img": "/vehicles/v6.png",
+    "img": "/assets/test1/vehicles/v6.png",
     "box": {
       "x": 83.54002254791432,
       "y": 36.753100338218715,
@@ -71,7 +71,7 @@ export const VEHICLES = [
   {
     "id": 7,
     "name": "Jeep",
-    "img": "/vehicles/v7.png",
+    "img": "/assets/test1/vehicles/v7.png",
     "box": {
       "x": 9.019165727170236,
       "y": 58.962795941375425,
@@ -82,7 +82,7 @@ export const VEHICLES = [
   {
     "id": 8,
     "name": "Pickup truck",
-    "img": "/vehicles/v8.png",
+    "img": "/assets/test1/vehicles/v8.png",
     "box": {
       "x": 39.79706877113867,
       "y": 59.52649379932357,
@@ -93,7 +93,7 @@ export const VEHICLES = [
   {
     "id": 9,
     "name": "Ambulance",
-    "img": "/vehicles/v9.png",
+    "img": "/assets/test1/vehicles/v9.png",
     "box": {
       "x": 73.16798196166854,
       "y": 58.173618940248026,
@@ -104,7 +104,7 @@ export const VEHICLES = [
   {
     "id": 10,
     "name": "Fire truck",
-    "img": "/vehicles/v10.png",
+    "img": "/assets/test1/vehicles/v10.png",
     "box": {
       "x": 10.033821871476889,
       "y": 80.38331454340474,
@@ -115,7 +115,7 @@ export const VEHICLES = [
   {
     "id": 11,
     "name": "Bicycle",
-    "img": "/vehicles/v11.png",
+    "img": "/assets/test1/vehicles/v11.png",
     "box": {
       "x": 45.5467869222097,
       "y": 84.10372040586246,
@@ -126,7 +126,7 @@ export const VEHICLES = [
   {
     "id": 12,
     "name": "Auto rickshaw",
-    "img": "/vehicles/v12.png",
+    "img": "/assets/test1/vehicles/v12.png",
     "box": {
       "x": 85.56933483652762,
       "y": 81.73618940248028,
